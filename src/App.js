@@ -24,7 +24,7 @@ function App () {
   function handleClick () {
     // let date = awardDate.toString();
     // console.log(awardDate);
-    let awardInfo = `SparkLearn EdTech Property: \n MR to: ${awardTo}, \n Item Description: ${itemDesc},\n Serial Number: ${serialNum},\n Issued by: ${issuedBy}`
+    let awardInfo = `SparkLearn EdTech Property %0A MR to: ${awardTo}, %0A Item Description: ${itemDesc},%0A Serial Number: ${serialNum},%0A Issued by: ${issuedBy}`
     // let awardInfo = `
     setWord(awardInfo)
     console.log(awardInfo);
@@ -42,7 +42,7 @@ function App () {
                 <input
                   type='text'
                   onChange={e => {
-                    setAwardTo(`${e.target.value}\n`)
+                    setAwardTo(`${e.target.value}`)
                   }}
                   placeholder='MR To'
                 />
@@ -50,7 +50,7 @@ function App () {
                 <input
                   type='text'
                   onChange={e => {
-                    setItemDesc(`${e.target.value}\n`)
+                    setItemDesc(`${e.target.value}`)
                   }}
                   placeholder='Item Description'
                 />

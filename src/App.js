@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App () {
-  const [propName, setPropName] = useState('')
+  const [itemDesc, setItemDesc] = useState('')
   const [awardTo, setAwardTo] = useState('')
-  const [awardBy, setAwardBy] = useState('')
-  const [awardDate, setAwardDate] = useState('')
+  const [serialNum, setSerialNum] = useState('')
+  const [issuedBy, setIssuedBy] = useState('')
   const [word, setWord] = useState('')
   const [size, setSize] = useState(400)
   const [bgColor, setBgColor] = useState('ffffff')
@@ -22,9 +22,9 @@ function App () {
   // Updating the input word when user
   // click on the generate button
   function handleClick () {
-    let date = awardDate.toString();
-    console.log(awardDate);
-    let awardInfo = `SparkLearn EdTech Property: \n${propName},\n Awarded to: ${awardTo}, \n Awarded By: ${awardBy}, \n Awarded On: ${date}`
+    // let date = awardDate.toString();
+    // console.log(awardDate);
+    let awardInfo = `SparkLearn EdTech Property: \n MR to: ${awardTo}, \n Item Description: ${itemDesc},\n Serial Number: ${serialNum},\n Issued by: ${issuedBy}`
     // let awardInfo = `
     setWord(awardInfo)
     console.log(awardInfo);
@@ -42,33 +42,33 @@ function App () {
                 <input
                   type='text'
                   onChange={e => {
-                    setPropName(`${e.target.value}\n`)
-                  }}
-                  placeholder='Property Name'
-                />
-                <br />
-                <input
-                  type='text'
-                  onChange={e => {
                     setAwardTo(`${e.target.value}\n`)
                   }}
-                  placeholder='Awarded to'
+                  placeholder='MR To'
                 />
                 <br />
                 <input
                   type='text'
                   onChange={e => {
-                    setAwardBy(e.target.value)
+                    setItemDesc(`${e.target.value}\n`)
                   }}
-                  placeholder='Awarded by'
+                  placeholder='Item Description'
                 />
                 <br />
                 <input
-                  type='date'
+                  type='number'
                   onChange={e => {
-                    setAwardDate(e.target.value)
+                    setSerialNum(e.target.value)
                   }}
-                  placeholder='Date awarded'
+                  placeholder='Serial Number'
+                />
+                <br />
+                <input
+                  type='text'
+                  onChange={e => {
+                    setIssuedBy(e.target.value)
+                  }}
+                  placeholder='Issued By'
                 />
                 <br />
                 <div className='text-center'>

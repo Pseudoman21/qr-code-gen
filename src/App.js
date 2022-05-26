@@ -56,7 +56,7 @@ function App () {
                 />
                 <br />
                 <input
-                  type='number'
+                  type='text'
                   onChange={e => {
                     setSerialNum(e.target.value)
                   }}

@@ -4,6 +4,7 @@ import './App.css'
 function App () {
   const [itemDesc, setItemDesc] = useState('')
   const [awardTo, setAwardTo] = useState('')
+  const [initial, setInit] = useState('!')
   const [serialNum, setSerialNum] = useState('')
   const [issuedBy, setIssuedBy] = useState('')
   const [word, setWord] = useState('')
@@ -15,7 +16,7 @@ function App () {
   // changes the input
   useEffect(() => {
     setQrCode(
-      `http://api.qrserver.com/v1/create-qr-code/?data=${word}&size=${size}x${size}&bgcolor=${bgColor}`
+      `http://api.qrserver.com/v1/create-qr-code/?data=${word}${initial}&size=${size}x${size}&bgcolor=${bgColor}`
     )
   }, [word, size, bgColor])
 
@@ -24,8 +25,9 @@ function App () {
   function handleClick () {
     // let date = awardDate.toString();
     // console.log(awardDate);
-    let awardInfo = `SparkLearn EdTech Property %0A MR to: ${awardTo}, %0A Item Description: ${itemDesc},%0A Serial Number: ${serialNum},%0A Issued by: ${issuedBy}`
+    let awardInfo = `SparkLearn EdTech Property %0A MR to: ${awardTo}%0A Item Description: ${itemDesc}%0A Serial Number: ${serialNum}%0A Issued by: ${issuedBy}`
     // let awardInfo = `
+    setInit("");
     setWord(awardInfo)
     console.log(awardInfo);
 
